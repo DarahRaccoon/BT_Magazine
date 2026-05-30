@@ -28,17 +28,8 @@ function loadFooter() {
         <footer class="site-footer">
             <div class="container footer-container">
                 <div class="footer-info">
-                    <p><i class="far fa-copyright"></i> ${new Date().getFullYear()} Revista Universitaria · Publicación sin ISSN/DOI · Solo circulación local</p>
-                    <p><i class="fas fa-university"></i> Universidad · Facultad · Ciudad, País</p>
-                </div>
-                <div class="footer-contact">
-                    <p><i class="fas fa-envelope"></i> revista@universidad.edu</p>
-                    <p>
-                        <i class="fab fa-instagram"></i> 
-                        <i class="fab fa-twitter"></i> 
-                        <i class="fab fa-facebook"></i> 
-                        <i class="fab fa-linkedin"></i> Seguinos en redes sociales
-                    </p>
+                    <p><i class="far fa-copyright"></i> ${new Date().getFullYear()} BT_Magazine · Publicación sin ISSN/DOI · Solo circulación local</p>
+                    <p><i class="fas fa-university"></i> Universidad Politécnica de Sinaloa · Mazatlán, Sinaloa, México</p>
                 </div>
             </div>
         </footer>

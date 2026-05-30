@@ -17,6 +17,10 @@ body {
     min-height: 100vh;
 }
 
+i {
+    margin-right: 0.5rem;
+}
+
 .main-content {
     flex: 1;
     max-width: 1200px;
@@ -88,10 +92,6 @@ body {
     border-bottom: 2px solid transparent;
 }
 
-.main-nav a i {
-    margin-right: 0.5rem;
-}
-
 .main-nav a:hover,
 .main-nav a.active {
     border-bottom-color: #ffd700;
@@ -116,17 +116,6 @@ body {
 .footer-contact p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
-}
-
-.footer-contact i {
-    margin: 0 0.25rem;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.footer-contact i:hover {
-    color: #ffd700;
-    cursor: pointer;
 }
 
 /* Bienvenida */
@@ -269,10 +258,6 @@ section:not(.welcome-section):not(.features) {
     width: 100%;
 }
 
-.callout i {
-    margin-right: 0.5rem;
-}
-
 .info-box {
     background: #d1ecf1;
     border-left: 5px solid #17a2b8;
@@ -281,10 +266,6 @@ section:not(.welcome-section):not(.features) {
     margin-top: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     width: 100%;
-}
-
-.info-box i {
-    margin-right: 0.5rem;
 }
 
 ul, ol {
@@ -315,10 +296,6 @@ li i {
     border-bottom: 2px solid #ddd;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
-}
-
-.year-section h2 i {
-    margin-right: 0.75rem;
 }
 
 .volumes-grid {
@@ -423,10 +400,6 @@ li i {
     flex-wrap: wrap;
 }
 
-.volume-meta i {
-    margin-right: 0.3rem;
-}
-
 .volume-description {
     font-size: 0.9rem;
     margin-bottom: 0;
@@ -440,6 +413,7 @@ li i {
 }
 
 /* Botón oculto (ya no se usa) */
+
 .btn-small {
     display: none;
 }
@@ -447,10 +421,6 @@ li i {
 .subtitle {
     color: #666;
     margin-bottom: 2rem;
-}
-
-.subtitle i {
-    margin-right: 0.5rem;
 }
 
 /* Responsive */
