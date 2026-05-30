@@ -22,6 +22,7 @@ body {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
+    width: 100%;
 }
 
 /* Contenedor */
@@ -36,7 +37,7 @@ body {
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -87,6 +88,10 @@ body {
     border-bottom: 2px solid transparent;
 }
 
+.main-nav a i {
+    margin-right: 0.5rem;
+}
+
 .main-nav a:hover,
 .main-nav a.active {
     border-bottom-color: #ffd700;
@@ -111,6 +116,17 @@ body {
 .footer-contact p {
     margin: 0.5rem 0;
     font-size: 0.9rem;
+}
+
+.footer-contact i {
+    margin: 0 0.25rem;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-contact i:hover {
+    color: #ffd700;
+    cursor: pointer;
 }
 
 /* Bienvenida */
@@ -140,6 +156,7 @@ body {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 .hero p {
@@ -155,14 +172,18 @@ body {
     border-radius: 2rem;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .btn:hover {
     background-color: #1e3c72;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* Features cards */
+
 .features {
     display: flex;
     gap: 2rem;
@@ -175,21 +196,23 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     text-align: center;
     flex: 1;
     min-width: 200px;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
 .feature-icon {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 1rem;
+    color: #2a5298;
 }
 
 .feature-card h3 {
@@ -197,7 +220,8 @@ body {
     color: #1e3c72;
 }
 
-/* Páginas internas */
+/* Páginas internas - Estilos unificados */
+
 h1 {
     font-size: 2.2rem;
     color: #1e3c72;
@@ -220,13 +244,47 @@ h3 {
     color: #333;
 }
 
+/* Contenedor unificado para el contenido de todas las páginas */
+
 .editable-content,
-section {
+section:not(.welcome-section):not(.features) {
     background: white;
-    padding: 1.5rem;
-    border-radius: 0.75rem;
+    padding: 2rem;
+    border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     margin-bottom: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Para mantener consistencia en todas las páginas */
+
+.callout {
+    background: #fff3cd;
+    border-left: 5px solid #ffc107;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.callout i {
+    margin-right: 0.5rem;
+}
+
+.info-box {
+    background: #d1ecf1;
+    border-left: 5px solid #17a2b8;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    width: 100%;
+}
+
+.info-box i {
+    margin-right: 0.5rem;
 }
 
 ul, ol {
@@ -239,25 +297,17 @@ li {
     margin: 0.5rem 0;
 }
 
-.callout {
-    background: #fff3cd;
-    border-left: 5px solid #ffc107;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-}
-
-.info-box {
-    background: #d1ecf1;
-    border-left: 5px solid #17a2b8;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    margin-top: 2rem;
+li i {
+    margin-right: 0.5rem;
+    color: #2a5298;
+    width: 1.25rem;
 }
 
 /* Archivos - grid de volúmenes */
+
 .year-section {
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .year-section h2 {
@@ -267,69 +317,131 @@ li {
     margin-bottom: 1.5rem;
 }
 
+.year-section h2 i {
+    margin-right: 0.75rem;
+}
+
 .volumes-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
 }
 
 .volume-card {
     background: white;
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .volume-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.16);
+}
+
+/* Vista previa - altura reducida en 1/4 (de 1.414 a 1.06) */
+.volume-preview {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    aspect-ratio: 1 / 1.06;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.volume-card:hover .preview-image {
+    transform: scale(1.02);
+}
+
+.preview-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.preview-placeholder i {
+    font-size: 3rem;
+}
+
+.preview-placeholder span {
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+.volume-info {
+    padding: 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .volume-number {
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: bold;
     color: #1e3c72;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
+}
+
+.volume-number i {
+    margin-right: 0.5rem;
+}
+
+.volume-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2a5298;
+    margin-bottom: 0.5rem;
 }
 
 .volume-meta {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #ff8c00;
     font-weight: 500;
     margin-bottom: 0.75rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.volume-meta i {
+    margin-right: 0.3rem;
 }
 
 .volume-description {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0;
     color: #555;
+    line-height: 1.5;
 }
 
+.volume-description i {
+    margin-right: 0.5rem;
+    color: #2a5298;
+}
+
+/* Botón oculto (ya no se usa) */
 .btn-small {
-    display: inline-block;
-    background-color: #2a5298;
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 1.5rem;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-small:hover {
-    background-color: #1e3c72;
-}
-
-.badge-proximo {
-    display: inline-block;
-    background-color: #aaa;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 1rem;
-    font-size: 0.75rem;
-    font-weight: bold;
+    display: none;
 }
 
 .subtitle {
@@ -337,7 +449,12 @@ li {
     margin-bottom: 2rem;
 }
 
+.subtitle i {
+    margin-right: 0.5rem;
+}
+
 /* Responsive */
+
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
@@ -348,6 +465,10 @@ li {
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    
+    .main-nav a i {
+        margin-right: 0.25rem;
     }
     
     .footer-container {
@@ -365,5 +486,14 @@ li {
     
     .welcome-section h1 {
         font-size: 2rem;
+    }
+    
+    .volumes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .editable-content,
+    section:not(.welcome-section):not(.features) {
+        padding: 1.25rem;
     }
 }

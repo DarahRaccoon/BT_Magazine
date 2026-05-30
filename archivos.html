@@ -4,61 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revista Universitaria | Archivos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div id="header"></div>
 
     <main class="main-content">
-        <h1>Archivos descargables</h1>
-        <p class="subtitle">Todos nuestros números publicados. Dos ediciones por año.</p>
 
-        <!-- Año 2025 -->
-        <div class="year-section">
-            <h2>2025</h2>
-            <div class="volumes-grid">
-                <div class="volume-card">
-                    <div class="volume-number">Vol. 1, Núm. 1</div>
-                    <div class="volume-meta">Primavera 2025</div>
-                    <p class="volume-description">Número inaugural con artículos sobre educación, cultura y participación estudiantil.</p>
-                    <a href="#" class="btn-small">📄 Descargar PDF</a>
-                </div>
-                <div class="volume-card">
-                    <div class="volume-number">Vol. 1, Núm. 2</div>
-                    <div class="volume-meta">Otoño 2025</div>
-                    <p class="volume-description">Tema central: Innovación y tecnología en el aula universitaria.</p>
-                    <a href="#" class="btn-small">📄 Descargar PDF</a>
-                </div>
-            </div>
-        </div>
+        <h1><i class="fas fa-archive"></i> Publicaciones</h1>
+        <p class="subtitle"><i class="fas fa-calendar-week"></i> Todos nuestros números publicados. Dos ediciones por año.</p>
+        
+        <!-- Contenedor dinámico para las revistas -->
+        <div id="revistas-container"></div>
 
-        <!-- Año 2026 -->
-        <div class="year-section">
-            <h2>2026</h2>
-            <div class="volumes-grid">
-                <div class="volume-card">
-                    <div class="volume-number">Vol. 2, Núm. 1</div>
-                    <div class="volume-meta">Primavera 2026</div>
-                    <p class="volume-description">Edición en curso - Próximamente</p>
-                    <span class="badge-proximo">Próximo</span>
-                </div>
-                <div class="volume-card">
-                    <div class="volume-number">Vol. 2, Núm. 2</div>
-                    <div class="volume-meta">Otoño 2026</div>
-                    <p class="volume-description">Convocatoria abierta hasta agosto 2026</p>
-                    <span class="badge-proximo">Próximo</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <p>💡 ¿No ves un número que buscas? Los números más antiguos están en proceso de digitalización. Escríbenos a <strong>revista@universidad.edu</strong> si necesitas acceso a alguna edición pasada.</p>
-        </div>
     </main>
 
     <div id="footer"></div>
 
     <script src="components.js"></script>
+    <script src="data.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// components.js - Header y footer compartidos
+// components.js - Header y footer compartidos con FontAwesome
 
 function loadHeader() {
     return `
@@ -6,16 +6,16 @@ function loadHeader() {
             <div class="container header-container">
                 <div class="logo">
                     <a href="index.html">
-                        <span class="logo-icon">📖</span>
-                        <span class="logo-text">Revista Uni</span>
+                        <i class="fas fa-university logo-icon"></i>
+                        <span class="logo-text">BT_Magazine</span>
                     </a>
                 </div>
                 <nav class="main-nav">
                     <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="acerca.html">Acerca de</a></li>
-                        <li><a href="autores.html">Autores</a></li>
-                        <li><a href="archivos.html">Archivos</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                        <li><a href="acerca.html"><i class="fas fa-info-circle"></i> Acerca de</a></li>
+                        <li><a href="autores.html"><i class="fas fa-feather-alt"></i> Autores</a></li>
+                        <li><a href="archivos.html"><i class="fas fa-archive"></i> Archivos</a></li>
                     </ul>
                 </nav>
             </div>
@@ -28,12 +28,17 @@ function loadFooter() {
         <footer class="site-footer">
             <div class="container footer-container">
                 <div class="footer-info">
-                    <p>© ${new Date().getFullYear()} Revista Universitaria · Publicación sin ISSN/DOI · Solo circulación local</p>
-                    <p>Universidad · Facultad · Ciudad, País</p>
+                    <p><i class="far fa-copyright"></i> ${new Date().getFullYear()} Revista Universitaria · Publicación sin ISSN/DOI · Solo circulación local</p>
+                    <p><i class="fas fa-university"></i> Universidad · Facultad · Ciudad, País</p>
                 </div>
                 <div class="footer-contact">
-                    <p>📧 revista@universidad.edu</p>
-                    <p>📱 Seguinos en redes sociales</p>
+                    <p><i class="fas fa-envelope"></i> revista@universidad.edu</p>
+                    <p>
+                        <i class="fab fa-instagram"></i> 
+                        <i class="fab fa-twitter"></i> 
+                        <i class="fab fa-facebook"></i> 
+                        <i class="fab fa-linkedin"></i> Seguinos en redes sociales
+                    </p>
                 </div>
             </div>
         </footer>
@@ -56,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentPage = window.location.pathname.split("/").pop() || "index.html";
     const links = document.querySelectorAll(".main-nav a");
     links.forEach(link => {
-        const linkHref = link.getAttribute("href");
+        const linkHref = link.getAttribute("href").split("/").pop();
         if (linkHref === currentPage) {
             link.classList.add("active");
         } else if (currentPage === "index.html" && linkHref === "index.html") {
