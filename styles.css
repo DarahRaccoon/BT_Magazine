@@ -81,6 +81,7 @@ i {
     display: flex;
     list-style: none;
     gap: 2rem;
+    color: white;
 }
 
 .main-nav a {
@@ -278,12 +279,6 @@ li {
     margin: 0.5rem 0;
 }
 
-li i {
-    margin-right: 0.5rem;
-    color: #2a5298;
-    width: 1.25rem;
-}
-
 /* Archivos - grid de volúmenes */
 
 .year-section {
@@ -325,7 +320,7 @@ li i {
 .volume-preview {
     position: relative;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    aspect-ratio: 1 / 1.06;
+    aspect-ratio: 1 / 1.414;
     width: 100%;
     display: flex;
     align-items: center;
@@ -379,10 +374,6 @@ li i {
     margin-bottom: 0.25rem;
 }
 
-.volume-number i {
-    margin-right: 0.5rem;
-}
-
 .volume-title {
     font-size: 1.2rem;
     font-weight: bold;
@@ -408,7 +399,6 @@ li i {
 }
 
 .volume-description i {
-    margin-right: 0.5rem;
     color: #2a5298;
 }
 
@@ -435,10 +425,6 @@ li i {
         gap: 1rem;
         flex-wrap: wrap;
         justify-content: center;
-    }
-    
-    .main-nav a i {
-        margin-right: 0.25rem;
     }
     
     .footer-container {
