@@ -16,8 +16,8 @@
 \RequirePackage[
     top=2.5cm,
     bottom=2cm,
-    left=1.25cm,
-    right=1.25cm,
+    inner=1.25cm,
+    outer=1.25cm,
     columnsep=0.65cm
 ]{geometry}
 
@@ -29,7 +29,7 @@
     \setcounter{secnumdepth}{3}
     \renewcommand{\thesection}{\arabic{section}}
     \titleformat{\section}{\sffamily\bfseries\large\MakeUppercase}{}{0em}{}
-    \titleformat{\subsection}{\sffamily\bfseries}{\thesubsection}{0.5em}{}
+    \titleformat{\subsection}{\sffamily}{\thesubsection}{0.5em}{}
     \titleformat{\subsubsection}{\sffamily\small}{\thesubsubsection}{0.5em}{}  
   
 \RequirePackage{enumitem}
@@ -41,10 +41,10 @@
 
 \pagestyle{fancy}
     \fancyhf{} 
-    \fancyhead[LE]{\sffamily\bfseries\href{https://darahraccoon.github.io/BT_Magazine/}{TITULO REVISTA}}
-    \fancyhead[RE]{No. \Numero, \ \PublDate}
-    \fancyhead[RO]{\sffamily\bfseries\href{https://darahraccoon.github.io/BT_Magazine/}{TITULO REVISTA}}
-    \fancyhead[LO]{No. \Numero, \ \PublDate}
+    \fancyhead[RE]{\sffamily\bfseries\selectfont \TituloActual \ | \href{https://darahraccoon.github.io/BT_Magazine/}{REVISTA}}
+    \fancyhead[LE]{No. \Numero, \ \PublDate}
+    \fancyhead[LO]{\sffamily\bfseries\selectfont \href{https://darahraccoon.github.io/BT_Magazine/}{REVISTA} | \TituloActual}
+    \fancyhead[RO]{No. \Numero, \ \PublDate}
     \fancyfoot[LE]{\thepage}
     \fancyfoot[RO]{\thepage}
 
@@ -63,7 +63,7 @@
         singlelinecheck=false,
         justification=raggedright,
         font=scriptsize,
-        labelfont={bf,color=DarkBlue},
+        labelfont={sf,bf,color=DarkBlue},
         skip=2pt
     }
     \captionsetup[figure]{
@@ -71,14 +71,14 @@
         singlelinecheck=false,
         justification=raggedright,
         font=scriptsize,
-        labelfont={bf,color=DarkBlue}
+        labelfont={sf,bf,color=DarkBlue}
     }
     \captionsetup[subfigure]{
         skip=5pt,
         singlelinecheck=false,
         justification=raggedright,
         font=scriptsize,
-        labelfont={bf,color=DarkBlue}
+        labelfont={sf,bf,color=DarkBlue}
     }
 
 \RequirePackage{amsmath}
@@ -107,11 +107,15 @@
 \newcommand{\SetVol}[1]{\def\Vol{#1}}
 \newcommand{\SetNum}[1]{\def\Numero{#1}}
 \newcommand{\SetPublDate}[1]{\def\PublDate{#1}}
+\newcommand{\SetTituloActual}[1]{
+    \def\TituloActual{}
+    \def\TituloActual{#1}
+}
 
 \newcommand{\Vol}{}
 \newcommand{\Numero}{}
 \newcommand{\PublDate}{}
-
+\newcommand{\TituloActual}{}
 
 
 \newcommand{\TituloEspecial}[1]{\node[anchor=north west,text width=0.5\paperwidth,white,text badly ragged,font=\sffamily\bfseries\fontsize{42}{36}\selectfont] at (0,0) {#1};}
@@ -126,15 +130,13 @@
     \begin{tikzpicture}[remember picture, overlay]
         \node[inner sep=0] at (current page.center) {\includegraphics[width=\paperwidth]{Portada}};
         \fill[black, opacity=0.4] (current page.south west) rectangle (current page.north east);
-        
         \node[anchor=south west,text width=0.8\paperwidth,white,text badly ragged,font=\bfseries\fontsize{60}{48}\selectfont] at (0,-24.85) {TITULO REVISTA};
-        
         \node[anchor=west] at (0,-26.5) {\includegraphics[width=0.2\paperwidth]{../../Logo_UPSIN_Horizontal_Blanco}};
-        
         \draw[white] (4.5,-25.85) -- (4.5,-27.15);
-        
         \node[anchor=west,font=\sffamily\bfseries\fontsize{10}{12}\selectfont,white,text width=10cm] at (4.75,-26.5) {No. \Numero \\ \PublDate};
     }{\end{tikzpicture}\newpage\restoregeometry}
+
+
 
 \newcommand{\ViejaPortada}{
     \thispagestyle{empty}
@@ -150,6 +152,8 @@
     \end{tikzpicture}
     \newpage
 }
+
+
 
 % INDICE
 \makeatletter
@@ -167,16 +171,16 @@
     \newgeometry{
         top=4cm,
         bottom=2cm,
-        left=1.5cm,
-        right=0.45\paperwidth
+        left=3cm,
+        right=0.4\paperwidth
     }
     \begingroup
     \hypersetup{linkcolor=black}
     \thispagestyle{empty}
     \begin{tikzpicture}[remember picture, overlay]
-        \node[anchor=west,xshift=-0.125cm] at (current page.west) {\includegraphics[height=\paperheight,width=0.4\paperwidth]{Indice}}; % Rel. asp = 28/99
+        \node[anchor=west,xshift=-0.125cm] at (current page.west) {\includegraphics[height=\paperheight,width=0.35\paperwidth]{Indice}}; % Rel. asp = 28/99
         \fill[black, opacity=0.25] (current page.north west) rectangle (-0.05\paperwidth,-30);
-        \node[anchor=south west,xshift=0.75cm,yshift=1cm,font=\sffamily\itshape\fontsize{14}{12}\selectfont,white,text width=0.3\paperwidth] at (current page.south west) {#1};
+        \node[anchor=south west,xshift=0.75cm,yshift=1cm,font=\sffamily\itshape\fontsize{14}{12}\selectfont,white,text width=0.275\paperwidth] at (current page.south west) {#1};
     \end{tikzpicture}
     \begin{minipage}{\linewidth}
         \renewcommand{\contentsname}{\sffamily{Índice}}
@@ -253,5 +257,5 @@
 }
 
 \newcommand{\tmultiheader}[1]{
-    \sffamily\bfseries\textcolor{DarkBlue}{#1}
+    \sffamily\bfseries\centering\textcolor{DarkBlue}{#1}
 }
